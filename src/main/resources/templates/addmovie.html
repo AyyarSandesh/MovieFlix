@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Movie Form</title>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<style>
+	*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "poppins",sans-serif;
+	text-decoration: none;
+	}
+	body{
+		
+		min-height: 100vh;
+		background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),url(https://res.cloudinary.com/dsqyxk24i/image/upload/v1720085315/rkhbwkreofz78fz4vdrr.png);
+		background-size: cover;
+		background-position: center;
+		/* background: #dfe9f5; */
+	
+	}
+	.main{
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+	nav{
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		height: 100%;
+		left: 0;
+		background-color: #ded7d7;
+		width: 50px;
+		overflow: hidden;
+		transform: width 0.2s linear;
+		box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+	}
+	.logo{
+		text-align: center;
+		display: flex;
+    	align-items: center;
+    	justify-content: left;
+    	padding: 10px 0;
+		transition: all 0.5s ease;
+		color:#f01c1c;
+		cursor:pointer;
+		font-size: 20px;
+		font-weight: bold;
+		font-size: 28px;
+		margin: 10px 0 0 10px;
+	}
+	.logo span{
+		font-weight: bold;
+		padding-left: 2px;
+		font-size: 18px;
+		text-transform: uppercase;
+	}
+	.logo :first-child{
+		/* width: 45px;
+		height: 45px; */
+		padding: 2px;
+		/* border: 2px solid black; */
+		font-size: 40px;
+		/* border-radius: 50%; */
+	}
+
+	a{
+		position: relative;
+		color: rgb(85,83,83);
+		font-size: 14px;
+		display: flex;
+		width: 250px;
+		padding:10px 10px 10px 0px;
+		text-transform: uppercase;
+	}
+	.logo-space{
+		font-size: 38px;
+		padding-top: 15px;
+	}
+	.bx{
+		position: relative;
+		width: 50px;
+		height: 40px;
+		top: 14px;
+		font-size: 20px;
+		text-align: center;
+	}
+	.nav-item{
+		position: relative;
+		top: 12px;
+		margin-left: 10px;
+	}
+	li a:hover{
+		background: #eee;
+	}
+	nav:hover{
+		width: 250px;
+		transition: all 0.5s ease;
+	}
+	.logout{
+		position: absolute;
+		bottom: 0;
+	}
+	h2{
+		text-align: center;
+		color: #fff;
+		background-color: green;
+		height: 35px;
+	}
+	.center{
+		/* border: 2px solid ; */
+		margin-top: 20px;
+		/* padding: 20px; */
+	}
+	form {
+  /* Optional styles for the form */
+  width: 400px;
+  margin: 0;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  
+}
+.input-box{
+	position: relative;
+	width: 100%;
+	height: 20px;
+	margin: 30px 1px;
+	padding: 0;
+}
+.input-box input{
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border: 2px solid rgba(255,255,255,0.2);
+	border-radius: 	4px;
+	font-size: 16px;
+	padding: 20px 45px 20px 20px;
+}
+.genre{
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border: 2px solid rgba(255,255,255,0.2);
+	border-radius: 	4px;
+	width: 50%;
+	padding: 5px 20px 8px 5px;
+}
+form button{
+	width: 100px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(20, 213, 120);
+	border: none;
+	padding: 10px;
+	margin:auto auto;
+	border-radius: 10px;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<div class="main">
+		<nav>
+			<ul>
+				<li>
+					<a href="admin" class="logo">
+						<span class="log">M</span><span class="logo-space">Ovieflix</span>
+						<!-- <span class="nav-item">MOVIEFLIX</span> -->
+					</a>
+				</li>
+				<li><a href="admin">
+					<i class='bx bxs-home'></i>
+					<span class="nav-item">Home</span>
+				</a></li>
+				<li><a href="#">
+					<i class='bx bxs-user'></i>
+					<span class="nav-item">User</span>
+				</a></li>
+				<li><a href="view-movies">
+					<i class='bx bxs-movie' ></i>
+					<span class="nav-item">View Movies</span>
+				</a></li>
+				<li><a href="map-addmovie">
+					<i class='bx bxs-book-add'></i>
+					<span class="nav-item">Add movies</span>
+				</a></li>
+				<li><a href="view-users">
+					<i class='bx bxs-user-account'></i>
+					<span class="nav-item">View Users</span>
+				</a></li>
+				<li class="logout"><a href="logout">
+					<i class='bx bx-log-out'></i>
+					<span class="nav-item">Log out</span>
+				</a></li>
+			</ul>
+		</nav>
+			<div class="center">
+			<h2>ADD MOVIE DETAILS</h2>
+			<form action="addmovie" method="post">
+				<div class="input-box">
+					<input type="text" name="moviename" placeholder="Enter Movie Name"><br><br>
+				</div>
+				<div class="input-box">
+					<input type="text" name="movieLink" placeholder="Enter Movie Link"><br><br>
+				</div>
+				<div class="input-box">
+					<input type="text" name="imgLink" placeholder="Enter image Link"><br><br>
+				</div>
+				<div class="input-box">
+					<input type="text" name="movieGenre" placeholder="Enter Movie Genre"><br><br>
+				</div>
+				<div class="input-box">
+					<input type="text" name="year" placeholder="Enter Movie Year"><br><br>
+				</div>
+				<div class="input-box">
+					<input type="text" name="duration" placeholder="Enter Movie Duration"><br><br>
+				</div>
+				<div class="input-box">
+					<input type="text" name="movieCast" placeholder="Enter movie cast"><br><br>
+				</div>
+				<div class="input-box">
+					<input type="text" name="movieDirector" placeholder="Enter Movie Director"><br><br>
+				</div>
+				<button type="submit">ADD MOVIE</button>
+			</form> 
+			</div>
+		</div>
+	<!-- <h2>Add Movie Details</h2>
+	<form action="addmovie" method="post">
+		<label>Movie Name</label>
+		<input type="text" name="moviename"><br><br>
+		<label>Movie Link</label>
+		<input type="text" name="movieLink"><br><br>
+		<label>Movie Genre</label>
+			<select name="movieGenre">
+				<option value="SciFi">SciFi</option>
+				<option value="Horror">Horror</option>
+				<option value="Romance">Romance</option>
+				<option value="Action">Action</option>
+				<option value="Comedy">Comedy</option>
+			</select><br><br>
+			<label>Movie Cast</label>
+			<input type="text" name="movieCast"><br><br>
+			<label>Movie Director</label>
+			<input type="text" name="movieDirector"><br><br>
+			<input type="submit" value="ADD MOVIE">
+	</form> -->
+</body>
+</html>
